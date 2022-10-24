@@ -14,5 +14,49 @@ public class Noticia {
     private String id;
     private String titulo;
     private String cuerpo;
-    private img foto;
+//    private img foto;
+
+    public Noticia() {
+    }
+    
+    
+
+    public Noticia(String id, String titulo, String cuerpo) {
+        this.id = id;
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+//        this.foto = foto;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getCuerpo() {
+        return cuerpo;
+    }
+
+    public void setCuerpo(String cuerpo) {
+        this.cuerpo = cuerpo;
+    }
+
+//    public img getFoto() {
+//        return foto;
+//    }
+//
+//    public void setFoto(img foto) {
+//        this.foto = foto;
+//    }
 }
