@@ -8,6 +8,7 @@ import java.util.Scanner;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class NoticiaServicio {
@@ -18,7 +19,7 @@ public class NoticiaServicio {
     private NoticiaRepositorio noticiaRepositorio;
 
     @Transactional
-    public void crearNoticia(String titulo, String cuerpo) throws MyException {
+    public void crearNoticia(String titulo, String cuerpo, MultipartFile foto) throws MyException {
 
         validar(titulo, cuerpo);
 
