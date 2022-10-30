@@ -5,56 +5,55 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Noticia {
-    
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
-    private String titulo;
-    private String cuerpo;
-//    private img foto;
 
-    public Noticia() {
-    }
-    
-    
+  @Id
+  @GeneratedValue(generator = "uuid")
+  @GenericGenerator(name = "uuid", strategy = "uuid2")
+  private String id;
+  private String titulo;
+  private String cuerpo;
+  @OneToOne
+  private Imagen foto;
 
-    public Noticia(String id, String titulo, String cuerpo) {
-        this.id = id;
-        this.titulo = titulo;
-        this.cuerpo = cuerpo;
-//        this.foto = foto;
-    }
+  public Noticia() {
+  }
 
-    public String getId() {
-        return id;
-    }
+  public Noticia(String id, String titulo, String cuerpo, Imagen foto) {
+    this.id = id;
+    this.titulo = titulo;
+    this.cuerpo = cuerpo;
+    this.foto = foto;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getTitulo() {
-        return titulo;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+  public String getTitulo() {
+    return titulo;
+  }
 
-    public String getCuerpo() {
-        return cuerpo;
-    }
+  public void setTitulo(String titulo) {
+    this.titulo = titulo;
+  }
 
-    public void setCuerpo(String cuerpo) {
-        this.cuerpo = cuerpo;
-    }
+  public String getCuerpo() {
+    return cuerpo;
+  }
 
-//    public img getFoto() {
-//        return foto;
-//    }
-//
-//    public void setFoto(img foto) {
-//        this.foto = foto;
-//    }
+  public void setCuerpo(String cuerpo) {
+    this.cuerpo = cuerpo;
+  }
+
+  public Imagen getFoto() {
+    return foto;
+  }
+
+  public void setFoto(Imagen foto) {
+    this.foto = foto;
+  }
 }
