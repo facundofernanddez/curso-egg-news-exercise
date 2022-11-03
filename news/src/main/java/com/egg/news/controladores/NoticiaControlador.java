@@ -61,4 +61,13 @@ public class NoticiaControlador {
     return "guardar_noticia.html";
   }
 
+  @GetMapping("/registro")
+  public String registro() {
+    return "registro.html";
+  }
+
+  @GetMapping("/login")
+  public String login() {
+    return "login.html";
+  }
 }
