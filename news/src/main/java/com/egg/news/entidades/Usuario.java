@@ -1,14 +1,11 @@
 package com.egg.news.entidades;
 
 import com.egg.news.enumeraciones.Rol;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -22,24 +19,14 @@ public class Usuario {
   private String nombreUsuario;
   private String password;
 
-  @Temporal(TemporalType.DATE)
-  private Date fechaDeAlta;
-
+//  @Temporal(TemporalType.DATE)
+//  private Date fechaDeAlta;
   @Enumerated(EnumType.STRING)
   private Rol rol;
+
   private boolean activo;
 
   public Usuario() {
-  }
-
-  public Usuario(String id, String email, String nombreUsuario, String password, Date fechaDeAlta, Rol rol, boolean activo) {
-    this.id = id;
-    this.email = email;
-    this.nombreUsuario = nombreUsuario;
-    this.password = password;
-    this.fechaDeAlta = fechaDeAlta;
-    this.rol = rol;
-    this.activo = activo;
   }
 
   public String getId() {
@@ -74,14 +61,13 @@ public class Usuario {
     this.password = password;
   }
 
-  public Date getFechaDeAlta() {
-    return fechaDeAlta;
-  }
-
-  public void setFechaDeAlta(Date fechaDeAlta) {
-    this.fechaDeAlta = fechaDeAlta;
-  }
-
+//  public Date getFechaDeAlta() {
+//    return fechaDeAlta;
+//  }
+//
+//  public void setFechaDeAlta(Date fechaDeAlta) {
+//    this.fechaDeAlta = fechaDeAlta;
+//  }
   public Rol getRol() {
     return rol;
   }
@@ -97,4 +83,10 @@ public class Usuario {
   public void setActivo(boolean activo) {
     this.activo = activo;
   }
+
+  @Override
+  public String toString() {
+    return "Usuario{" + "rol=" + rol + '}';
+  }
+
 }

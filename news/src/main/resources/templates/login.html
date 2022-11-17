@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Login</title>
     <meta charset="UTF-8">
@@ -9,16 +9,17 @@
   </head>
   <body>
     <div class="container">
-      <form>
+      <form th:action="@{/logincheck}" method="POST">
         <div class="mb-3 mt-3">
           <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" name="email" placeholder="Email">
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="password" class="form-control" name="password" placeholder="Contraseña">
         </div>
-        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <button type="submit" class="btn btn-primary">Ingresar</button><br>
+        <a class="btn btn-primary mt-2" th:href="@{/registro}" role="button">Registrarse</a>
       </form>
     </div>
 

@@ -6,7 +6,6 @@ import com.egg.news.excepciones.MyException;
 import com.egg.news.repositorios.NoticiaRepositorio;
 import java.util.List;
 import java.util.Optional;
-import java.util.Scanner;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class NoticiaServicio {
 
-  Scanner leer = new Scanner(System.in);
-
-  @Autowired(required = true)
+  @Autowired
   private NoticiaRepositorio noticiaRepositorio;
 
   @Autowired
