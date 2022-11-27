@@ -10,6 +10,6 @@ public class AdminControlador {
 
   @GetMapping("/dashboard")
   public String panelAdmin() {
-    return "panelAdmin.html";
+    return "panel_admin.html";
   }
 }
